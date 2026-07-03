@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 import { useInventory } from "./hooks/useInventory";
 import "./App.css";
 
@@ -26,7 +26,7 @@ function App() {
     return [...items].sort((a, b) => a.name.localeCompare(b.name));
   }, [items]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setForm((prev) => ({
       ...prev,
@@ -157,7 +157,10 @@ function App() {
             </div>
             <p className="small-text" aria-live="polite">
               {error
-                ? "Unable to fetch inventory right now." : items.length === 0 ? "No items yet" : "Updated just now"}
+                ? "Unable to fetch inventory right now."
+                : items.length === 0
+                ? "No items yet"
+                : "Updated just now"}
             </p>
           </div>
 
