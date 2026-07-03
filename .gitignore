@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+inventory.db
+backend/*.db
+.env
+.env.*
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+venv/
+.DS_Store
+*.log
